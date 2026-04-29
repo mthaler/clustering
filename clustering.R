@@ -1,9 +1,10 @@
 # Install ggplot2 if not already installed
 # install.packages("ggplot2")
 
+# load the ggplot 2 library
 library(ggplot2)
 
-
+# calculate kmeans of the dataset
 kmeans_result <- kmeans(faithful, centers = 2, nstart = 10)
 
 # Add cluster assignments to the original data
@@ -13,7 +14,7 @@ faithful$Cluster <- as.factor(kmeans_result$cluster)
 centers <- as.data.frame(kmeans_result$centers)
 centers$Cluster <- as.factor(1:2)
 
-# Plot using ggplot2
+# Plot the data using ggplot2
 ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Cluster)) +
   geom_point(size = 2, alpha = 0.7) +
   geom_point(
@@ -25,7 +26,7 @@ ggplot(iris, aes(x = Sepal.Length, y = Sepal.Width, color = Cluster)) +
     stroke = 2
   ) +
   labs(
-    title = "Visualizing Clusters in R using Iris Dataset (ggplot2)",
+    title = "Visualizing Clusters in R using Old Faithful dataset",
     x = "Sepal Length (cm)",
     y = "Sepal Width (cm)",
     color = "Cluster"
