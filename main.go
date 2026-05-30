@@ -35,7 +35,6 @@ func main() {
 	}
 
 	var points2 plotter.XYs
-	points2 = make(plotter.XYs, len(points))
 	for _, p := range points {
 		points2 = append(points2, plotter.XY{X: p.x, Y: p.y})
 	}
