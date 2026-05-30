@@ -47,6 +47,10 @@ func main() {
 	pl.Title.Text = "Old Faithful"
 	pl.X.Label.Text = "Eruptions"
 	pl.Y.Label.Text = "Waiting"
+	// Save the plot to a PNG file
+	if err := pl.Save(4*vg.Inch, 4*vg.Inch, "faithful2.png"); err != nil {
+		panic(err)
+	}
 
 	maxErruptions := 0.0
 	for _, p := range points {
