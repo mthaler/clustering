@@ -2,6 +2,8 @@ Clustering is an unsupervised learning algorithm to find and group similar thing
 
 ![faithful](faithful.png)
 
+The following [plot](https://github.com/gonum/plot) was made with gonum:
+
 ![faithful](faithful2.png)
 
 # K-Means Clustering
