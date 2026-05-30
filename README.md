@@ -2,6 +2,8 @@ Clustering is an unsupervised learning algorithm to find and group similar thing
 
 ![faithful](faithful.png)
 
+![faithful](faithful2.png)
+
 # K-Means Clustering
 
 One of the fundamental disadvantages of the K-Means Clustering algorithm is that the number of clusters has to be specified in advance. In our simple example it can be deduced by visually inspecting the data that there are two clusters but for other data it might not be so obvious. There are methods to determine the ideal number of clusters like the [elbow method](https://en.wikipedia.org/wiki/Elbow_method_(clustering)).
