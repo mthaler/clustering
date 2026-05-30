@@ -3,11 +3,16 @@ package main
 import (
 	"encoding/csv"
 	"fmt"
+	"image/color"
 	"log"
 	"math"
 	"math/rand"
 	"os"
 	"strconv"
+
+	"gonum.org/v1/plot"
+	"gonum.org/v1/plot/plotter"
+	"gonum.org/v1/plot/vg"
 )
 
 func main() {
@@ -28,6 +33,21 @@ func main() {
 			points = append(points, p)
 		}
 	}
+
+	// Create a new plot
+	pl := plot.New()
+	scatter, err := plotter.NewScatter(points)
+	if err != nil {
+		panic(err)
+	}
+	scatter.GlyphStyle.Color = color.RGBA{R: 255, A: 255}
+	scatter.GlyphStyle.Radius = vg.Points(4)
+	// Add the scatter plot to the plot and set the axes labels
+	pl.Add(scatter)
+	pl.Title.Text = "Old Faithful"
+	pl.X.Label.Text = "Eruptions"
+	pl.Y.Label.Text = "Waiting"
+
 	maxErruptions := 0.0
 	for _, p := range points {
 		if p.x > maxErruptions {
