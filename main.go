@@ -47,7 +47,7 @@ func main() {
 		panic(err)
 	}
 	scatter.GlyphStyle.Color = color.RGBA{R: 255, A: 255}
-	scatter.GlyphStyle.Radius = vg.Points(4)
+	scatter.GlyphStyle.Radius = vg.Points(2)
 	// Add the scatter plot to the plot and set the axes labels
 	pl.Add(scatter)
 	pl.Title.Text = "Old Faithful"
