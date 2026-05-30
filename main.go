@@ -10,7 +10,8 @@ import (
 )
 
 func main() {
-	fmt.Println("Hello, World!")
+	faithful := readCsvFile("faithful.csv")
+	fmt.Printf("%d\n", len(faithful))
 }
 
 func readCsvFile(filePath string) [][]string {
