@@ -5,7 +5,7 @@ type centroid struct {
 	y float64
 }
 
-func (c centroid) average(points []point) {
+func (c *centroid) average(points []point) {
 	if len(points) == 0 {
 		return
 	}
