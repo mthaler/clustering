@@ -103,3 +103,17 @@ func generateCentroids(k int, maxX float64, maxY float64) []centroid {
 	}
 	return c
 }
+
+func nearestCentroid(p point, centroids []centroid) *centroid {
+	minimumDistance := math.MaxFloat64
+	var nearest *centroid
+	for _, c := range centroids {
+		pc := point{x: c.x, y: c.y}
+		currentDistance := distance(p, pc)
+		if currentDistance < minimumDistance {
+			minimumDistance = currentDistance
+			nearest = &c
+		}
+	}
+	return nearest
+}
